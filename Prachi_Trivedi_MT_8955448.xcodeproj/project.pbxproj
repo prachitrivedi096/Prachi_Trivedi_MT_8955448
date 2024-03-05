@@ -16,6 +16,7 @@
 		5239B16D2B94205F00BBE31B /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5239B16C2B94205F00BBE31B /* CalculateViewController.swift */; };
 		5269DF4F2B96D0A500C22772 /* MyWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5269DF4E2B96D0A500C22772 /* MyWorkViewController.swift */; };
 		5269DF512B96D3B200C22772 /* Lab2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5269DF502B96D3B200C22772 /* Lab2ViewController.swift */; };
+		52AF303F2B97B3C0004FD224 /* Lab3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF303E2B97B3C0004FD224 /* Lab3ViewController.swift */; };
 		52DBCFC72B92F33C00547CCF /* FormulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DBCFC62B92F33C00547CCF /* FormulaViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		5239B16C2B94205F00BBE31B /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		5269DF4E2B96D0A500C22772 /* MyWorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWorkViewController.swift; sourceTree = "<group>"; };
 		5269DF502B96D3B200C22772 /* Lab2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab2ViewController.swift; sourceTree = "<group>"; };
+		52AF303E2B97B3C0004FD224 /* Lab3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab3ViewController.swift; sourceTree = "<group>"; };
 		52DBCFC62B92F33C00547CCF /* FormulaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 				52DBCFC62B92F33C00547CCF /* FormulaViewController.swift */,
 				5239B16C2B94205F00BBE31B /* CalculateViewController.swift */,
 				5269DF502B96D3B200C22772 /* Lab2ViewController.swift */,
+				52AF303E2B97B3C0004FD224 /* Lab3ViewController.swift */,
 			);
 			path = Prachi_Trivedi_MT_8955448;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				5269DF512B96D3B200C22772 /* Lab2ViewController.swift in Sources */,
 				52DBCFC72B92F33C00547CCF /* FormulaViewController.swift in Sources */,
 				5219F6622B8EAB5D00BDCB89 /* ViewController.swift in Sources */,
+				52AF303F2B97B3C0004FD224 /* Lab3ViewController.swift in Sources */,
 				5219F65E2B8EAB5D00BDCB89 /* AppDelegate.swift in Sources */,
 				5219F6602B8EAB5D00BDCB89 /* SceneDelegate.swift in Sources */,
 				5239B16D2B94205F00BBE31B /* CalculateViewController.swift in Sources */,
@@ -308,7 +312,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +341,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

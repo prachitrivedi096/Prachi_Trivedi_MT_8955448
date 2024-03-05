@@ -4,7 +4,7 @@
 //
 //  Created by user236101 on 3/2/24.
 //
-
+//This file handles Quadratic Formula
 import UIKit
 
 class CalculateViewController: UIViewController, UITextFieldDelegate {
@@ -13,71 +13,100 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtB: UITextField!
     @IBOutlet weak var txtC: UITextField!
     
-    //@IBOutlet weak var txtMessage: UILabel!
     @IBOutlet weak var lblFormula: UILabel!
     
-    @IBOutlet weak var txtMessage: UITextView!
+    @IBOutlet weak var lblMessage: UILabel!
     
+    //On Click of Calculate button, function will calculate validation messages and quadratic formula
     @IBAction func btnCalculate(_ sender: UIButton) {
+        //To reset the value of X on click calculate button again
+        lblFormula.text = ""
         
-        guard let  valueA  = txtA.text, !valueA.isEmpty, let a = Double(valueA),
-              let  valueB = txtB.text, !valueB.isEmpty, let b = Double(valueB),
-              let  valueC = txtC.text, !valueC.isEmpty , let c = Double(valueC) else
+        //Checking whether inputtext is empty or not
+        guard let  valueA  = txtA.text, !valueA.isEmpty,
+              let  valueB = txtB.text, !valueB.isEmpty,
+              let  valueC = txtC.text, !valueC.isEmpty  else
         {
-            //print("Enter a value of A, B and C to find x")
-            txtMessage.text = "Enter a value of A, B, and C to find x"
-            txtMessage.isHidden = false
+            print("Enter a value of A, B and C to find x")
+            lblMessage.text = "Enter a value of A, B, and C to find x"
+            lblMessage.isHidden = false
+            
             return
         }
-        
-        let discriminant = b * b - 4 * a * c
-        if discriminant < 0 {
-            txtMessage.text = "There are no results since the discriminant is less than zero."
-            txtMessage.isHidden = false
-            //print("Answer is nagative")
-        }
-        else if discriminant == 0 {
-            let x = -b / (2 * a)
-            txtMessage.text = "The discriminant is less than zero."
-            txtMessage.isHidden = false
+
+        var errorMessage = ""
+        //Calculating and displaying the value of X and displaying appropriate message
+        if let a = Double(valueA), let b = Double(valueB), let c = Double(valueC) {
             
-            lblFormula.text = "x = \(String(format:"%.4f", x))"
-            lblFormula.isHidden = false
-            //print("Answer is \(x)")
+            let discriminant = b * b - 4 * a * c
+            if discriminant < 0 {
+                print("Answer is nagative")
+                errorMessage = "There are no results since the discriminant is less than zero."
+            }
+            else if discriminant == 0 {
+                let x = -b / (2 * a)
+                lblMessage.text = "The discriminant is zero."
+                lblMessage.isHidden = false
+                
+                lblFormula.text = "x = \(String(format:"%.4f", x))"
+                lblFormula.isHidden = false
+                print("Answer is \(x)")
+            }
+            else {
+                let x1 = (-b + sqrt(discriminant)) / (2 * a)
+                let x2 = (-b - sqrt(discriminant)) / (2 * a)
+                
+                lblFormula.text = "X = \(String(format: "%.4f", x1)), \(String(format: "%.4f", x2))"
+                lblFormula.isHidden = false
+                
+                lblMessage.text = "There are two values for X"
+                lblMessage.isHidden = false
+                print("Answer is \(x1), \(x2)")
+            }
         }
         else {
-            let x1 = (-b + sqrt(discriminant)) / (2 * a)
-            let x2 = (-b - sqrt(discriminant)) / (2 * a)
-            
-            lblFormula.text = "X = \(String(format: "%.4f", x1)), \(String(format: "%.4f", x2))"
-            lblFormula.isHidden = false
-            
-            txtMessage.text = "There are two values for X"
-            txtMessage.isHidden = false
-            
-            //print("Answer is \(x1), \(x2)")
+            // Handle invalid input (non-numeric characters)
+            if valueA.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) != nil {
+                //lblMessage.text = "The value you entered for A is invalid."
+                errorMessage += "The value you entered for A is invalid. \n"
+                
+            }
+            if valueB.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) != nil {
+                //lblMessage.text = "The value you entered for B is invalid."
+                errorMessage += "The value you entered for B is invalid. \n"
+            }
+            if valueC.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) != nil {
+                //lblMessage.text = "The value you entered for C is invalid."
+                errorMessage += "The value you entered for C is invalid. \n"
+            }
+            lblMessage.isHidden = false
         }
-        
+        if !errorMessage.isEmpty {
+                lblMessage.text = errorMessage
+                lblMessage.isHidden = false
+            }
     }
-    
+    //On click of Clear button, resetting the values of input and displaying a message
     @IBAction func btnClear(_ sender: UIButton) {
         txtA.text = ""
         txtB.text = ""
         txtC.text = ""
         
-        txtMessage.text = "Enter a value for A, B and C to find x"
-        txtMessage.isHidden = false
+        lblFormula.isHidden = true
+        lblMessage.text = "Enter a value for A, B and C to find x"
+        lblMessage.isHidden = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        txtMessage.isHidden = true
+        lblMessage.isHidden = true
         lblFormula.isHidden = true
         
         txtA.delegate = self
         txtB.delegate = self
         txtC.delegate = self
         
+        //Displaying numberpad keyboard
         txtA.keyboardType = .numberPad
         txtB.keyboardType = .numberPad
         txtC.keyboardType = .numberPad
@@ -85,9 +114,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
-        
-        // Do any additional setup after loading the view.
-    }
+        }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -97,7 +124,6 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     
     @objc func dismissKeyboard()
     {
-        
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
@@ -108,40 +134,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
            
            // Display the updated text directly in the text field
            textField.text = updatedText
-        
-        // Validate that the entered string is numeric
-        let allowedCharacters = CharacterSet.decimalDigits
-        let characterSet = CharacterSet(charactersIn: string)
-        let isValid = allowedCharacters.isSuperset(of: characterSet)
-        
-        // Display appropriate message for invalid input
-        if !isValid {
-            if textField == txtA {
-                txtMessage.text = "The value you entered for A is invalid."
-                txtMessage.isHidden = false
-            } else if textField == txtB {
-                txtMessage.text = "The value you entered for B is invalid."
-                txtMessage.isHidden = false
-            } else if textField == txtC {
-                txtMessage.text = "The value you entered for C is invalid."
-                txtMessage.isHidden = false
-            }
-        }
-        // Update the text field's text if the entered string is valid
-            if isValid {
-                textField.text = updatedText
-            }
-            
+    
             return false // Prevent the default behavior of appending characters
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
