@@ -46,7 +46,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
             }
             else if discriminant == 0 {
                 let x = -b / (2 * a)
-                lblMessage.text = "The discriminant is zero."
+                lblMessage.text = "There is only one value for X."
                 lblMessage.isHidden = false
                 
                 lblFormula.text = "x = \(String(format:"%.4f", x))"
