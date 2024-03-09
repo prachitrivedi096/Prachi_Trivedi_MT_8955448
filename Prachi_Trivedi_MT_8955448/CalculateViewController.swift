@@ -21,6 +21,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     @IBAction func btnCalculate(_ sender: UIButton) {
         //To reset the value of X on click calculate button again
         lblFormula.text = ""
+        lblMessage.text = ""
         
         //Checking whether inputtext is empty or not
         guard let  valueA  = txtA.text, !valueA.isEmpty,
@@ -134,7 +135,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
            
            // Display the updated text directly in the text field
            textField.text = updatedText
-    
+            
             return false // Prevent the default behavior of appending characters
     }
 }
