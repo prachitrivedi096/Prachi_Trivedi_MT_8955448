@@ -14,10 +14,8 @@
 		5219F6672B8EAB5D00BDCB89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5219F6662B8EAB5D00BDCB89 /* Assets.xcassets */; };
 		5219F66A2B8EAB5D00BDCB89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5219F6682B8EAB5D00BDCB89 /* LaunchScreen.storyboard */; };
 		5239B16D2B94205F00BBE31B /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5239B16C2B94205F00BBE31B /* CalculateViewController.swift */; };
-		5269DF4F2B96D0A500C22772 /* MyWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5269DF4E2B96D0A500C22772 /* MyWorkViewController.swift */; };
 		5269DF512B96D3B200C22772 /* Lab2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5269DF502B96D3B200C22772 /* Lab2ViewController.swift */; };
 		52AF303F2B97B3C0004FD224 /* Lab3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF303E2B97B3C0004FD224 /* Lab3ViewController.swift */; };
-		52DBCFC72B92F33C00547CCF /* FormulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DBCFC62B92F33C00547CCF /* FormulaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +28,8 @@
 		5219F6692B8EAB5D00BDCB89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5219F66B2B8EAB5D00BDCB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5239B16C2B94205F00BBE31B /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
-		5269DF4E2B96D0A500C22772 /* MyWorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWorkViewController.swift; sourceTree = "<group>"; };
 		5269DF502B96D3B200C22772 /* Lab2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab2ViewController.swift; sourceTree = "<group>"; };
 		52AF303E2B97B3C0004FD224 /* Lab3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab3ViewController.swift; sourceTree = "<group>"; };
-		52DBCFC62B92F33C00547CCF /* FormulaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,11 +66,9 @@
 				5219F65F2B8EAB5D00BDCB89 /* SceneDelegate.swift */,
 				5219F6612B8EAB5D00BDCB89 /* ViewController.swift */,
 				5219F6632B8EAB5D00BDCB89 /* Main.storyboard */,
-				5269DF4E2B96D0A500C22772 /* MyWorkViewController.swift */,
 				5219F6662B8EAB5D00BDCB89 /* Assets.xcassets */,
 				5219F6682B8EAB5D00BDCB89 /* LaunchScreen.storyboard */,
 				5219F66B2B8EAB5D00BDCB89 /* Info.plist */,
-				52DBCFC62B92F33C00547CCF /* FormulaViewController.swift */,
 				5239B16C2B94205F00BBE31B /* CalculateViewController.swift */,
 				5269DF502B96D3B200C22772 /* Lab2ViewController.swift */,
 				52AF303E2B97B3C0004FD224 /* Lab3ViewController.swift */,
@@ -153,9 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5269DF4F2B96D0A500C22772 /* MyWorkViewController.swift in Sources */,
 				5269DF512B96D3B200C22772 /* Lab2ViewController.swift in Sources */,
-				52DBCFC72B92F33C00547CCF /* FormulaViewController.swift in Sources */,
 				5219F6622B8EAB5D00BDCB89 /* ViewController.swift in Sources */,
 				52AF303F2B97B3C0004FD224 /* Lab3ViewController.swift in Sources */,
 				5219F65E2B8EAB5D00BDCB89 /* AppDelegate.swift in Sources */,
