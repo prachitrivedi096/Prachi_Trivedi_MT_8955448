@@ -58,6 +58,27 @@ class Lab3ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lblMsg.isHidden = true
-        // Do any additional setup after loading the view.
+        //To dismiss the keyboar using TapGesture
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+                
+        tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
     }
+    
+    //To handle Return key of keyboard and dismiss the keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @objc func dismissKeyboard()
+    {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+           super.viewDidAppear(animated)
+       }
 }
